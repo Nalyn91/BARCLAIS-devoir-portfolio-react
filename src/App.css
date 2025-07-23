@@ -1,38 +1,584 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  background: #fafafa;
+  font-weight: 400;
+}
+
+h1, h2, h3,strong {
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  font-weight: 600;
+}
+
+/* Navbar */
+.navbar {
+  background: #1a1a1a;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  align-items: center;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li {
+  cursor: pointer;
+  font-weight: 500;
+}
+.nav-links .active {
+  border-bottom: none;
+}
+
+.nav-links li:hover {
+  border-bottom: 2px solid #ffffff; /* ou une autre couleur selon ton thème */
+}
+
+/* Hero section */
+.hero {
+  background: url("./images/hero-bg.jpg") no-repeat center center;
+  background-size: cover;
+  height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(40, 50, 80, 0.6);
+  width: 100%;
+  padding: 80px 0;
+  text-align: center;
+  color: #fff;
+}
+.cta {
+  margin-top: 30px;
+  padding: 15px 40px;
+  background: #e44d26;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* About & Skills */
+.about-skills {
+  display: flex;
+  max-width: 900px;
+  margin: -70px auto 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  padding: 30px;
+  gap: 30px;
+}
+.about {
+  flex: 1.1;
+}
+.skills {
+  flex: 0.9;
+}
+.about-inner {
+  display: flex;
+  gap: 20px;
+}
+.profile-pic {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.about-text {
+  font-size: 15px;
+}
+@media (max-width: 768px) {
+  .about-skills {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .about-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-pic {
+    margin-bottom: 15px;
+  }
+}
+
+/* Skills Bar */
+.skillbar {
+  margin-bottom: 18px;
+}
+.skill-label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+.bar-bg {
+  background: #efefef;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 15px;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.7s;
+}
+
+/* Footer */
+.footer {
+  background: #1a1a1a;
+  color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px 10px 30px 10px;
+  font-size: 15px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.footer-section {
+  min-width: 210px;
+}
+.footer-section b {
+  font-size: 16px;
+}
+.footer-socials a {
+  margin-right: 10px;
+  color: #fff;
+  font-size: 22px;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+.footer-section ul li {
+  margin-bottom: 6px;
+}
+/* --- Services Page --- */
+.services-hero img,
+.services-banner {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.services-section {
+  max-width: 1100px;
+  margin: -70px auto 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  padding: 40px 30px 50px 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.services-section h1 {
+  margin-bottom: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.services-section .underline {
+  width: 200px;
+  height: 4px;
+  background: #2075f7;
+  margin: 18px auto 35px auto;
+  border-radius: 2px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.services-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  flex: 1 1 250px;
+  background: #fafbfc;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  padding: 30px;
+  min-width: 250px;
+  max-width: 330px;
+  margin: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+  text-align: center;
+}
+
+.service-card:hover {
+  background-color: #efefef;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 42px;
+  color: #2075f7;
+  margin-bottom: 12px;
+}
+
+/* --- Contact Page --- */
+.contact-section {
+  max-width: 1100px;
+  min-width: 325px;
+  margin: 40px auto 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  padding: 40px 30px 50px 30px;
+  text-align: center;
+}
+
+.contact-section h1 {
+  margin-bottom: 5px;
+}
+
+.contact-section .underline {
+  width: 200px;
+  height: 4px;
+  background: #2075f7;
+  margin: 18px auto 35px auto;
+  border-radius: 2px;
+}
+
+.contact-container {
+  display: flex;
+  gap: 30px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.contact-form, .contact-info {
+  flex: 1 1 350px;
+  min-width: 325px;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  margin: 10px 5px;
+  box-sizing: border-box;
+  text-align: left;
+  border: 1px solid #e5e5e5;
+}
+
+.contact-form h2, .contact-info h2 {
+  border-bottom: 3px solid #2075f7;
+  padding-bottom: 6px;
+  margin-bottom: 24px;
+}
+
+.contact-form form input, 
+.contact-form form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 13px;
+  border-radius: 5px;
+  border: 1px solid #cfcfcf;
+  font-size: 15px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.contact-form form button {
+  background: #2075f7;
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-info .info-block {
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.legal-section {
+  max-width: 1100px;
+  margin: 40px auto 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  padding: 40px 30px 50px 30px;
+  text-align: center;
+}
+.legal-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.underline {
+  width: 220px;
+  height: 5px;
+  background: #2075f7;
+  margin: 18px auto 35px auto;
+  border-radius: 2px;
+}
+.legal-accordion {
+  margin: 0 auto;
+  max-width: 900px;
+  text-align: left;
+}
+.accordion-item {
+  border: 1px solid #ececec;
+  border-bottom: none;
+}
+.accordion-item:last-child {
+  border-bottom: 1px solid #ececec;
+}
+.accordion-title {
+  padding: 18px 24px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+.accordion-title.active {
+  background: #dbeafe;
+}
+.accordion-content {
+  padding: 24px;
+  background: #fff;
+  animation: fadeIn 0.3s;
+}
+.legal-editor, .legal-host {
+  font-size: 1.1rem;
+  line-height: 2;
+}
+.accordion-arrow {
+  font-size: 1.2em;
+  margin-left: 8px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Portfolio */
+.portfolio-section {
+  max-width: 1150px;
+  margin: 0 auto 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  padding: 40px 30px 50px 30px;
+  text-align: center;
+}
+.portfolio-section h1 {
+  margin-bottom: 8px;
+}
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 25px;
+}
+.portfolio-card {
+  background: #fafbfc;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  padding: 25px;
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 300px;
+  margin: 10px 0;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.portfolio-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.portfolio-card:hover {
+  background-color: #efefef;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.portfolio-detail {
+  font-size: 0.95em;
+  color: #888;
+  margin-top: 7px;
+}
+.btn-blue {
+  background: #2075f7;
+  color: #fff;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 5px;
+  font-size: 1em;
+  margin: 12px 0 0 0;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn-blue:hover {
+  background-color: #339aff;
+}
+
+/* Modal GitHub */
+
+.github-modal {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  animation: fadeIn 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 99;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  background: none;
+  border: none;
+  color: #eee;
+  font-size: 2em;
+  cursor: pointer;
+}
+.modal-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.modal-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  margin-right: 30px;
+  background: #fff;
+  object-fit: contain;
+}
+.modal-info {
+  flex: 1;
+  font-size: 1.08em;
+}
+.modal-link {
+  color: #70b6fa;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 12px;
+}
+.modal-field {
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+}
+.modal-label {
+  display: inline-block;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-right: 8px;
+  min-width: 100px; /* Pour réserver un petit espace même avec des icônes */
+
+}
+.btn-modal {
+  background: #2075f7;
+  color: #fff;
+  border: none;
+  padding: 10px 36px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+.modal {
+  animation: fadeIn 0.3s ease-in-out;
+  /* autres styles */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* Cacher le bouton hamburger en grand écran */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  cursor: pointer;
+  border: 1px solid limegreen;
+}
+
+.hamburger__bar {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: red;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Menu fermé par défaut en mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #1a1a1a;
+    padding: 20px 40px;
+    display: none;
+  }
+
+  .nav-links.nav-links--open {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-bottom: 15px;
   }
 }
