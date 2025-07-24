@@ -8,6 +8,8 @@ import Portfolio from './portfolio';
 import MentionsLegales from './mentions-1';
 import GithubProfileModal from './modale';
 import PhotoAnael from './images/PhotoAnael.jpg';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 
 // Barre de navigation
@@ -113,8 +115,9 @@ function Footer() {
         <div>Tél: 10 20 30 40 50</div>
         <div>anael.jb@gmail.com</div>
         <div className="footer-socials">
-          <a href="#"><i className="fab fa-github"></i></a>
-          <a href="#"><i className="fab fa-linkedin"></i></a>
+          <i className="bi bi-linkedin"></i>
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-github"></i>
         </div>
       </div>
       <div className="footer-section">
